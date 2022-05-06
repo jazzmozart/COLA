@@ -59,15 +59,18 @@
         <module>cola-component-extension-starter</module>
         <module>cola-component-catchlog-starter</module>
         <module>cola-component-test-container</module>
+        <module>soda-component-security-starter</module>
+        <module>soda-component-core</module>
+        <module>soda-component-lock</module>
     </modules>
 
     <properties>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <spring.boot.version>2.2.6.RELEASE</spring.boot.version>
-        <spring.version>5.2.2.RELEASE</spring.version>
+        <spring.boot.version>2.6.7</spring.boot.version>
+        <spring.version>5.3.19</spring.version>
         <lombok.version>1.18.22</lombok.version>
         <logback.version>1.2.10</logback.version>
     </properties>
@@ -83,6 +86,8 @@
 
     <dependencyManagement>
         <dependencies>
+
+
             <!-- 日志 -->
             <dependency>
                 <groupId>org.slf4j</groupId>
