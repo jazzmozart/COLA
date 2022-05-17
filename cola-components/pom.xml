@@ -59,9 +59,10 @@
         <module>cola-component-extension-starter</module>
         <module>cola-component-catchlog-starter</module>
         <module>cola-component-test-container</module>
-        <module>soda-component-security-starter</module>
-        <module>soda-component-core</module>
-        <module>soda-component-lock</module>
+        <module>soda-security</module>
+        <module>soda-core</module>
+        <module>soda-lock</module>
+        <module>soda-storage</module>
     </modules>
 
     <properties>
@@ -73,6 +74,10 @@
         <spring.version>5.3.19</spring.version>
         <lombok.version>1.18.22</lombok.version>
         <logback.version>1.2.10</logback.version>
+        <oss.aliyun.version>3.15.0</oss.aliyun.version>
+        <oss.minio.version>8.4.1</oss.minio.version>
+        <jackson.version>2.13.2</jackson.version>
+        <hutool.version>5.8.1</hutool.version>
     </properties>
 
     <dependencies>
@@ -82,11 +87,25 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- 工具包 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <dependencyManagement>
         <dependencies>
-
 
             <!-- 日志 -->
             <dependency>
@@ -107,13 +126,33 @@
                 <scope>provided</scope>
             </dependency>
 
-            <!-- 工具包 -->
+            <!-- Jackson -->
             <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
                 <scope>provided</scope>
             </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.datatype</groupId>
+                <artifactId>jackson-datatype-jsr310</artifactId>
+                <version>${jackson.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
